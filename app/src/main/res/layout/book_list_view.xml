@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.booklisting.BookActivity">
+
+    <RelativeLayout
+        android:id="@+id/search_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <EditText
+            android:id="@+id/search_input"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edit_text_height"
+            android:hint="@string/edit_text_hint"
+            android:inputType="text"
+            android:maxHeight="@dimen/edit_text_height"
+            android:maxLines="1" />
+
+        <ImageView
+            android:id="@+id/search_button"
+            android:layout_width="@dimen/icon_search"
+            android:layout_height="@dimen/icon_search"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/default_margin"
+            android:layout_marginTop="@dimen/magin_top"
+            android:src="@drawable/search" />
+
+    </RelativeLayout>
+
+
+    <!--list view-->
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_container"
+        android:layout_marginBottom="@dimen/zero"
+        android:divider="@null"
+        android:dividerHeight="@dimen/zero" />
+
+    <!--empty view-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_container">
+
+        <include
+            android:id="@+id/empty_view"
+            layout="@layout/empty_view"
+
+            />
+    </RelativeLayout>
+    <!--loading indicator-->
+    <ProgressBar
+        android:id="@+id/loading_indicator"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>
